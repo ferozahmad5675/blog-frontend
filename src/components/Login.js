@@ -22,7 +22,7 @@ const Login = () => {
 
   const sendRequest = async (type = "login") => {
     const res = await axios
-      .post(`http://localhost:5000/routes/api/${type}`, {
+      .post(`https://blogbackened-api.onrender.com/routes/api/${type}`, {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

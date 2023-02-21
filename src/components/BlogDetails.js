@@ -17,10 +17,13 @@ const BlogDetails = () => {
   };
   const sendRequest = async () => {
     const res = await axios
-      .put(`http://localhost:5000/routes/api/updateblog/${id}`, {
-        title: inputs.title,
-        description: inputs.description,
-      })
+      .put(
+        `https://blogbackened-api.onrender.com/routes/api/updateblog/${id}`,
+        {
+          title: inputs.title,
+          description: inputs.description,
+        }
+      )
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
@@ -28,7 +31,7 @@ const BlogDetails = () => {
 
   const fetchDetails = async () => {
     const res = await axios
-      .get(`http://localhost:5000/routes/api/${id}`)
+      .get(`https://blogbackened-api.onrender.com/routes/api/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

@@ -6,7 +6,7 @@ const Blogs = () => {
   const [blog, setblog] = useState();
   const sendRequest = async () => {
     const res = await axios
-      .get("http://localhost:5000/routes/api/blog")
+      .get("https://blogbackened-api.onrender.com/routes/api/blog")
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

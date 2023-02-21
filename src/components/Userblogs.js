@@ -7,7 +7,7 @@ const Userblogs = () => {
   const id = localStorage.getItem("userId");
   const sendRequest = async () => {
     const res = await axios
-      .get(`http://localhost:5000/routes/api/getbyid/${id}`)
+      .get(`https://blogbackened-api.onrender.com/routes/api/getbyid/${id}`)
       .catch((e) => console.log(e));
 
     const data = await res.data;

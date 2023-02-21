@@ -21,7 +21,7 @@ const BlogCard = ({ title, description, image, userName, isUser, id }) => {
   };
   const deletRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/routes/api/delete/${id}`)
+      .delete(`https://blogbackened-api.onrender.com/routes/api/delete/${id}`)
       .catch((err) => console.log(err));
     const data = res.data;
     return data;
