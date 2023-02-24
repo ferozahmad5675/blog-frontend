@@ -27,7 +27,7 @@ const Login = () => {
         email: inputs.email,
         password: inputs.password,
       })
-      .catch((err) => console.log(err));
+      .catch(() => alert("Incorrect email or password"));
 
     const data = await res.data;
     console.log(data);
@@ -40,7 +40,7 @@ const Login = () => {
       sendRequest("signup")
         .then((data) => localStorage.setItem("userId", data.user._id))
         .then(() => dispatch(authAction.login()))
-        .then(() => navigate("/blogs"));
+        .then(() => navigate("/login"));
     } else {
       sendRequest()
         .then((data) => localStorage.setItem("userId", data.user._id))
@@ -108,7 +108,12 @@ const Login = () => {
             </Button>
             <Button
               onClick={() => setIsSignup(!isSignup)}
-              sx={{ borderRadius: 3, marginTop: 3, color: "white" }}
+              sx={{
+                borderRadius: 3,
+                marginTop: 3,
+                color: "white",
+                ":hover": { background: "orange" },
+              }}
             >
               Change To {isSignup ? "Login" : "Signup"}
             </Button>

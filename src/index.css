@@ -1,3 +1,18 @@
 *{
   margin: 0;
 }
+.header{
+   background:
+            "linear-gradient(90deg, rgba(11,1,171,1) 0%, rgba(0,159,191,1) 30%, rgba(0,79,212,1) 73%)",
+    
+}
+@media screen and (max-width: 640px) 
+{
+  .header{
+    width: 20rem
+  }
+  .blog{
+   padding-right: 10rem;
+  }
+  
+}

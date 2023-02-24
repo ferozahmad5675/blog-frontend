@@ -7,6 +7,7 @@ import {
   Tabs,
   Toolbar,
   Typography,
+  theme,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +18,7 @@ const Header = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const [value, setvalue] = useState();
   return (
-    <>
+    <div className>
       <AppBar
         position="sticky"
         sx={{
@@ -25,11 +26,11 @@ const Header = () => {
             "linear-gradient(90deg, rgba(11,1,171,1) 0%, rgba(0,159,191,1) 30%, rgba(0,79,212,1) 73%)",
         }}
       >
-        <Toolbar>
+        <Toolbar className="header">
           <Typography variant="h4">BlogApp</Typography>
 
           {isLoggedIn && (
-            <Box marginLeft="auto" marginRight="auto">
+            <Box className="blog">
               <Tabs
                 value={value}
                 textColor="inherit"
@@ -82,7 +83,7 @@ const Header = () => {
           </Box>
         </Toolbar>
       </AppBar>
-    </>
+    </div>
   );
 };
 
